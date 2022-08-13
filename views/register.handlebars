@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Registre-se</title>
+    <style>
+        body {
+            background-color: #043c6e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-div {
+            padding: 20px;
+            height: 100vh;
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .big-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 5%;
+        }
+        .login-form {
+            width: 70vw;
+            max-width: 350px;
+            height: 40%;
+            border-radius: 5%;
+            background-color: #5c6d74;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-link {
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: underline;
+        }
+        .login-link:hover {
+            color: #35578b
+        }
+        p {
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            width: 90%;
+            height: 5vh;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            background-color: #788a9c;
+            margin: 1%;
+        }
+        input:focus {
+            background-color: #9fadbb;
+        }
+        ::placeholder {
+            color: #fff;
+        }
+        input[type="submit"] {
+            width: 70%;
+            height: 11%;
+            min-height: 2em;
+            border-radius: 10px;
+            border: 2px solid #35578b;
+            background-color: #4c74af;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9em;
+            padding: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #35578b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <img src="https://cdn.discordapp.com/attachments/804330188602605588/832056052664369162/Icon_1.png" alt=""
+            class="big-image">
+        <form action="/register" method="post" class="login-form">
+            <input type="text" name="username" placeholder="Nome de usuário">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="password" placeholder="Senha">
+            <input type="submit" value="Registrar">
+            <p>Já tem conta? <a class="login-link" href="/login">Faça Login</a></p>
+        </form>
+        
+    </div>
+</body>
+</html>
