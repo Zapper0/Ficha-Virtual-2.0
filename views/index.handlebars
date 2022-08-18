@@ -18,9 +18,9 @@
         <div class="right-navbar">
             <div class="sidebar-button" id="sidebarButton" onclick="sidebarToggle()">
                 {{#with user}}
-                    <div class="top-bar"></div>
-                    <div class="mid-bar"></div>
-                    <div class="bottom-bar"></div>
+                <div class="top-bar"></div>
+                <div class="mid-bar"></div>
+                <div class="bottom-bar"></div>
                 {{/with}}
             </div>
         </div>
@@ -39,13 +39,16 @@
         <div class="items">
             {{#each itens.comidas}}
             <div class="item">
-                <div class="item-info">
-                    <h3>{{nome}}</h3>
-                    <p>{{preço}}</p>
-                    <button class="cart-button"><img class="cart-image" src="https://img.icons8.com/material-rounded/24/788a9c/buy.png"/></button>
-                </div>
                 <div class="item-image">
                     <img src="{{imagem}}" class="image">
+                </div>
+                <div class="item-footer">
+                    <div class="item-info">
+                        <h3>{{nome}}</h3>
+                        <p>{{preço}}</p>
+                    </div>
+                    <button class="cart-button"><img class="cart-image"
+                            src="https://img.icons8.com/material-rounded/48/788a9c/buy.png" /></button>
                 </div>
             </div>
             {{/each}}
@@ -53,12 +56,16 @@
         <div class="items">
             {{#each itens.bebidas}}
             <div class="item">
-                <div class="item-info">
-                    <h3>{{nome}}</h3>
-                    <p>{{preço}}</p>
-                </div>
                 <div class="item-image">
                     <img src="{{imagem}}" class="image">
+                </div>
+                <div class="item-footer">
+                    <div class="item-info">
+                        <h3>{{nome}}</h3>
+                        <p>{{preço}}</p>
+                    </div>
+                    <button class="cart-button"><img class="cart-image"
+                            src="https://img.icons8.com/material-rounded/48/788a9c/buy.png" /></button>
                 </div>
             </div>
             {{/each}}
@@ -69,8 +76,14 @@
 
 <style>
 
+    .cart-image {
+        width: 24px;
+        height: 24px;
+    }
+
     .cart-button {
-        width: 100%;
+        right: 0;
+        width: 30px;
         height: 100%;
         background-color: #022341;
         display: flex;
@@ -79,25 +92,31 @@
         justify-content: center;
     }
 
+    .item-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
     .items {
         position: relative;
-        width: 80vw;
+        width: 90vw;
         height: 200px;
-        margin-top: 5vh;
+        margin-top: 2vh;
         display: flex;
-        align-items: center;
-        overflow: auto;
-        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
     }
 
     .item {
         height: 200px;
         width: 150px;
+        min-width: 150px;
         display: inline-flex;
-        flex-direction: column-reverse;
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: center;
         padding: 2vh 2vw;
-        position: relative;
     }
 
     .image {
@@ -109,16 +128,14 @@
     .item-image {
         height: 150px;
         width: 150px;
-        position: absolute;
+        top: 0;
     }
 
     .item-info {
-        position: absolute;
-        width: inherit;
-        max-width: 200px;
+        height: 100%;
+        width: 120px;
         display: flex;
         flex-direction: column;
-        align-items: baseline;
         flex-wrap: wrap;
         background-color: #fff;
     }
@@ -217,7 +234,7 @@
         right: -70vw;
         top: 10vh;
         position: fixed;
-        z-index: 1;
+        z-index: 3;
         background: #022341;
         height: 89.5vh;
         width: 60vw;
