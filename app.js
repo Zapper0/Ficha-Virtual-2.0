@@ -92,8 +92,13 @@ app.post('/register', (req, res) => {
         });
 });
 
-//start server
+app.get('/carrinho', (req, res) => {
+    const auth = getAuth();
+    res.render('carrinho', { user: auth.currentUser });
+})
 
+
+//start server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Servidor online na porta ${port}`);
